@@ -31,6 +31,7 @@ Content-type: text/html
   <body>
   <h1 style="color:red">{title}</h1>
   <pre>
+  あなたはこんな人ですか？
   {age}
   {civil}
   </pre>
