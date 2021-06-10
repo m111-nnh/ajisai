@@ -31,9 +31,8 @@ Content-type: text/html
   <body>
   <h1 style="color:red">{title}</h1>
   <pre>
-  {age}
-  {civil}
+  {jsondata}
   </pre>
   </body>
 </html>
-'''[1:-1].format(title="たいとる",age=response['result']['age'],civil=response['result']['civilstatus']))
+'''[1:-1].format(title="たいとる",jsondata=response))
