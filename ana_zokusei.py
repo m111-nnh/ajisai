@@ -35,4 +35,4 @@ Content-type: text/html
   </pre>
   </body>
 </html>
-'''.format(title="たいとる",jsondata=response))
+'''[1:-1].format(title="たいとる",jsondata=response))
