@@ -4,8 +4,6 @@ import start_cotoha as c
 #from pprint import pp
 
 # 解析させる文
-sentence = '今日も空は美しいでちゅ'
-
 url = 'https://api.ce-cotoha.com/api/dev/nlp/beta/user_attribute'
 headers = {
     'Content-Type': 'application/json;charset=UTF-8',
