@@ -19,7 +19,14 @@ with c.requests.post(url, headers=headers, data=data) as req:
 
 # 辞書を見やすく整形して出力
 #pp(response)
-age = '2'
+
+res = {}
+for k in ['age','civilstatus']:
+  if k in response['result'].keys():
+    res[k] = response['result'][k]
+  else:
+    res[k] = ''
+
 civil = '未婚'
 
 print('''
@@ -34,9 +41,9 @@ Content-type: text/html
   <h1 style="color:red">{title}</h1>
   <pre>
   あなたはこんな人ですか？
-  {age}
-  {civil}
+  年齢：{age}
+  結婚歴：{civil}
   </pre>
   </body>
 </html>
-'''[1:-1].format(title="たいとる",age=age, civil=civil))
+'''[1:-1].format(title="たいとる",age=res['age'], civil=res['civilstatus']))
