@@ -39,13 +39,11 @@ with c.requests.post(url, headers=headers, data=data) as req:
 #pp(response)
 
 res = {}
-for k in ['age','civilstatus']:
+for k in ['age','civilstatus','hobby','occupation']:
   if k in response['result'].keys():
     res[k] = response['result'][k]
   else:
     res[k] = ''
-
-civil = '未婚'
 
 print('''
 Content-type: text/html
@@ -61,7 +59,9 @@ Content-type: text/html
   あなたはこんな人ですか？
   年齢：{age}
   結婚歴：{civil}
+  趣味：{hobby}
+  職業：{occupation}
   </pre>
   </body>
 </html>
-'''[1:-1].format(title="たいとる",age=res['age'], civil=res['civilstatus']))
+'''[1:-1].format(title="たいとる",age=res['age'], civil=res['civilstatus'] hobby=res['hobby'], occupation=res['occupation']))
