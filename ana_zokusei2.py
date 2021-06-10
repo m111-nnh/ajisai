@@ -3,9 +3,9 @@
 import start_cotoha as c
 #from pprint import pp
 
-sentence = '今日も天気が良いですね。'
-
 # 解析させる文
+sentence = '今日も空は美しいでちゅ'
+
 url = 'https://api.ce-cotoha.com/api/dev/nlp/beta/user_attribute'
 headers = {
     'Content-Type': 'application/json;charset=UTF-8',
@@ -31,9 +31,8 @@ Content-type: text/html
   <body>
   <h1 style="color:red">{title}</h1>
   <pre>
-  {age}
-  {civil}
+  {jsondata}
   </pre>
   </body>
 </html>
-'''[1:-1].format(title="たいとる",age=response['result']['age'],civil=response['result']['civilstatus']))
+'''[1:-1].format(title="たいとる",jsondata=response))
