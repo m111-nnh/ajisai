@@ -1,7 +1,7 @@
 #!/usr/share/nginx/.virtualenvs/env3.7/bin/python
 
 import start_cotoha as c
-from pprint import pp
+#from pprint import pp
 
 # 解析させる文
 sentence = '今日も空は美しいでちゅ'
