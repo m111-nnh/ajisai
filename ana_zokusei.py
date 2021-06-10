@@ -2,8 +2,26 @@
 
 import start_cotoha as c
 #from pprint import pp
+import cgi, sys, io
 
-sentence = '今日も天気が良いですね。'
+# 文字化け対策
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+form = cgi.FieldStorage()
+
+# 対象のフォーム変数名
+params = ['name',]
+
+# 結果を受け取る辞書
+r = {}
+
+for p in params:
+    if p in form:
+        r[p] = form[p].value
+    else:
+        r[p] = '(入力なし)'
+
+sentence = r['name']
 
 # 解析させる文
 url = 'https://api.ce-cotoha.com/api/dev/nlp/beta/user_attribute'
