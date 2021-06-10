@@ -64,4 +64,4 @@ Content-type: text/html
   </pre>
   </body>
 </html>
-'''[1:-1].format(title="たいとる",age=res['age'], civil=res['civilstatus'] hobby=res['hobby'], occupation=res['occupation']))
+'''[1:-1].format(title="たいとる",age=res['age'], civil=res['civilstatus'], hobby=res['hobby'], occupation=res['occupation']))
