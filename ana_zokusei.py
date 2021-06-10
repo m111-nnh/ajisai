@@ -19,6 +19,8 @@ with c.requests.post(url, headers=headers, data=data) as req:
 
 # 辞書を見やすく整形して出力
 #pp(response)
+age = '2'
+civil = '未婚'
 
 print('''
 Content-type: text/html
@@ -31,9 +33,10 @@ Content-type: text/html
   <body>
   <h1 style="color:red">{title}</h1>
   <pre>
+  あなたはこんな人ですか？
   {age}
   {civil}
   </pre>
   </body>
 </html>
-'''[1:-1].format(title="たいとる",age=response['result']['age'],civil=response['result']['civilstatus']))
+'''[1:-1].format(title="たいとる",age=age, civil=civil))
