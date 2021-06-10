@@ -1,3 +1,5 @@
+#!/usr/share/nginx/.virtualenvs/env3.7/bin/python
+
 import start_cotoha as c
 from pprint import pp
 
@@ -16,4 +18,21 @@ with c.requests.post(url, headers=headers, data=data) as req:
     response = req.json()
 
 # 辞書を見やすく整形して出力
-pp(response)
+#pp(response)
+
+print('''
+Content-type: text/html
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>{title}</title>
+  </head>
+  <body>
+  <h1 style="color:red">{title}</h1>
+  <pre>
+  {jsondata}
+  </pre>
+  </body>
+</html>
+'''.format(title="たいとる",jsondata=response))
