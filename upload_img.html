@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>画像のアップロード</title>
+</head>
+
+<body>
+<form method="post" enctype="multipart/form-data">
+    <!-- 「accept="image/*"」は画像ファイル全般の選択を許可する -->
+    <!-- 「multiple」は複数の画像ファイルの選択を許可する -->
+    <!-- 「required」は画像が選択されていない場合にエラーメッセージを表示する -->
+    <input action="python/image.py" type="file" name="food_img" accept="image/*" multiple required>
+    <br><button type="submit">送信する</button>
+</form>
+</body>
+</html>
